@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  py:
+    build:
+      context: ./..
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./../output:/var/www/practica/output
+    container_name: practica_main
+    entrypoint: sh -c "python main.py"
